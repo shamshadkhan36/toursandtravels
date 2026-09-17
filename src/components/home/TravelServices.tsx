@@ -8,7 +8,17 @@ export const TravelServices: React.FC = () => {
   const { navigateTo } = useNavigation();
   const { openQuoteModal } = useQuoteModal();
 
-  // Map icon name to Lucide component
+  const serviceColors: Record<string, { bg: string; text: string; border: string }> = {
+    'tour-packages': { bg: 'bg-teal-50', text: 'text-teal-600', border: 'hover:border-teal-300' },
+    'custom-itineraries': { bg: 'bg-amber-50', text: 'text-amber-600', border: 'hover:border-amber-300' },
+    'hotel-booking': { bg: 'bg-rose-50', text: 'text-rose-600', border: 'hover:border-rose-300' },
+    'flight-assistance': { bg: 'bg-cyan-50', text: 'text-cyan-600', border: 'hover:border-cyan-300' },
+    'visa-assistance': { bg: 'bg-purple-50', text: 'text-purple-600', border: 'hover:border-purple-300' },
+    'airport-transfers': { bg: 'bg-emerald-50', text: 'text-emerald-600', border: 'hover:border-emerald-300' },
+    'transportation': { bg: 'bg-blue-50', text: 'text-blue-600', border: 'hover:border-blue-300' },
+    'group-travel': { bg: 'bg-orange-50', text: 'text-orange-600', border: 'hover:border-orange-300' },
+  };
+
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'Compass': return Compass;
@@ -29,20 +39,20 @@ export const TravelServices: React.FC = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-4">
           <div>
-            <div className="inline-flex items-center gap-1.5 bg-teal-50 text-brand-teal px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
-              <Sparkles className="w-3.5 h-3.5" /> End-to-End Travel Solutions
+            <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-teal-50 to-cyan-50 text-teal-700 border border-teal-200 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-teal-600" /> End-to-End Travel Solutions
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-brand-navy tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-display text-slate-900 tracking-tight">
               Everything You Need For Your Journey
             </h2>
-            <p className="mt-2 text-base text-brand-slate-700 max-w-xl">
+            <p className="mt-2 text-base text-slate-600 max-w-xl">
               From hotel bookings and private transfers to visa processing and tailor-made holidays.
             </p>
           </div>
 
           <button
             onClick={() => navigateTo('services')}
-            className="inline-flex items-center gap-2 bg-brand-navy hover:bg-brand-navy-light text-white text-xs sm:text-sm font-semibold px-5 py-3 rounded-2xl transition shadow-md self-start md:self-auto group"
+            className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-bold px-6 py-3.5 rounded-2xl transition shadow-md self-start md:self-auto group"
           >
             <span>Explore All Services</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -53,30 +63,31 @@ export const TravelServices: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {SERVICES_DATA.map((svc) => {
             const Icon = getIcon(svc.iconName);
+            const theme = serviceColors[svc.id] || { bg: 'bg-teal-50', text: 'text-teal-600', border: 'hover:border-teal-300' };
             return (
               <div
                 key={svc.id}
                 onClick={() => openQuoteModal()}
-                className="group bg-brand-slate-50 hover:bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5 border border-brand-slate-200/80 cursor-pointer flex flex-col justify-between"
+                className={`group bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5 border border-slate-200 cursor-pointer flex flex-col justify-between ${theme.border}`}
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-teal-50 group-hover:bg-brand-teal text-brand-teal group-hover:text-white flex items-center justify-center mb-5 transition-colors duration-300">
+                  <div className={`w-12 h-12 rounded-2xl ${theme.bg} ${theme.text} flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 shadow-sm`}>
                     <Icon className="w-6 h-6" />
                   </div>
 
-                  <h3 className="text-lg font-bold font-display text-brand-navy mb-2 group-hover:text-brand-teal transition-colors">
+                  <h3 className="text-lg font-bold font-display text-slate-900 mb-2 group-hover:text-teal-600 transition-colors">
                     {svc.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-brand-slate-700 leading-relaxed mb-4">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
                     {svc.description}
                   </p>
                 </div>
 
-                <div className="space-y-1.5 pt-3 border-t border-brand-slate-100">
+                <div className="space-y-1.5 pt-3 border-t border-slate-100">
                   {svc.features.slice(0, 2).map((feat, i) => (
-                    <div key={i} className="text-[11px] text-brand-slate-700 flex items-center gap-1.5">
-                      <Check className="w-3.5 h-3.5 text-brand-teal flex-shrink-0" />
+                    <div key={i} className="text-[11px] text-slate-600 flex items-center gap-1.5">
+                      <Check className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
                       <span className="line-clamp-1">{feat}</span>
                     </div>
                   ))}

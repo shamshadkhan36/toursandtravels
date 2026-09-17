@@ -35,36 +35,36 @@ export const Footer: React.FC = () => {
 
   return (
     <>
-      <footer className="bg-brand-navy-dark text-brand-slate-200 pt-16 pb-24 sm:pb-12 border-t border-white/10 relative">
+      <footer className="bg-white text-slate-700 pt-16 pb-24 sm:pb-12 border-t border-slate-200 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-12 border-b border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-12 border-b border-slate-200">
             {/* Column 1: Brand info */}
             <div className="space-y-4">
-              <div className="flex items-center gap-2.5">
-                <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-brand-teal to-brand-cyan flex items-center justify-center text-white shadow-glow">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-teal-500 via-cyan-500 to-indigo-600 flex items-center justify-center text-white shadow-glow">
                   <Compass className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <div className="font-display font-extrabold text-xl tracking-tight text-white leading-none">
-                    SHAMSHAD<span className="text-brand-teal">CODES</span>
+                  <div className="font-display font-black text-xl tracking-tight text-slate-900 leading-none">
+                    SHAMSHAD<span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 via-cyan-600 to-indigo-600">CODES</span>
                   </div>
-                  <div className="text-[11px] font-semibold tracking-widest text-brand-slate-300 uppercase">
+                  <div className="text-[11px] font-bold tracking-widest text-teal-700 uppercase mt-0.5">
                     Tours & Travel
                   </div>
                 </div>
               </div>
 
-              <p className="text-sm text-brand-slate-300 leading-relaxed">
+              <p className="text-sm text-slate-600 leading-relaxed">
                 Making travel planning simpler, one journey at a time. Discover handpicked domestic and international tour packages with personalized assistance.
               </p>
 
-              {/* Social Media Icons with SVG */}
-              <div className="flex items-center gap-3 pt-2">
+              {/* Colorful Social Media Icons */}
+              <div className="flex items-center gap-2.5 pt-2">
                 <a
                   href={COMPANY_INFO.socialLinks.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-xl bg-white/5 hover:bg-brand-teal hover:text-white flex items-center justify-center text-brand-slate-300 transition duration-300"
+                  className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white flex items-center justify-center transition-transform hover:scale-110 shadow-sm"
                   aria-label="Instagram"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -75,7 +75,7 @@ export const Footer: React.FC = () => {
                   href={COMPANY_INFO.socialLinks.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-xl bg-white/5 hover:bg-brand-teal hover:text-white flex items-center justify-center text-brand-slate-300 transition duration-300"
+                  className="w-10 h-10 rounded-2xl bg-blue-600 text-white flex items-center justify-center transition-transform hover:scale-110 shadow-sm"
                   aria-label="Facebook"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -86,7 +86,7 @@ export const Footer: React.FC = () => {
                   href={COMPANY_INFO.socialLinks.youtube}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-xl bg-white/5 hover:bg-brand-teal hover:text-white flex items-center justify-center text-brand-slate-300 transition duration-300"
+                  className="w-10 h-10 rounded-2xl bg-red-600 text-white flex items-center justify-center transition-transform hover:scale-110 shadow-sm"
                   aria-label="YouTube"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -97,25 +97,25 @@ export const Footer: React.FC = () => {
                   href={generateWhatsAppLink('Hello ShamshadCodes Tours & Travel!')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-xl bg-emerald-600/20 text-emerald-400 hover:bg-emerald-500 hover:text-white flex items-center justify-center transition duration-300"
+                  className="w-10 h-10 rounded-2xl bg-emerald-500 text-white flex items-center justify-center transition-transform hover:scale-110 shadow-sm"
                   aria-label="WhatsApp"
                 >
-                  <MessageCircle className="w-4 h-4" />
+                  <MessageCircle className="w-5 h-5 fill-white text-emerald-500" />
                 </a>
               </div>
             </div>
 
             {/* Column 2: Quick Links */}
             <div>
-              <h4 className="text-white font-bold text-base mb-4 font-display flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-brand-teal"></span> Quick Links
+              <h4 className="text-slate-900 font-bold text-base mb-4 font-display flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-teal-500"></span> Quick Links
               </h4>
               <ul className="space-y-2.5 text-sm">
                 {quickLinks.map((link) => (
                   <li key={link.page}>
                     <button
                       onClick={() => navigateTo(link.page)}
-                      className="text-brand-slate-300 hover:text-white hover:translate-x-1 transition transform duration-200 inline-block"
+                      className="text-slate-600 hover:text-teal-600 font-medium hover:translate-x-1 transition transform duration-200 inline-block"
                     >
                       {link.label}
                     </button>
@@ -126,15 +126,15 @@ export const Footer: React.FC = () => {
 
             {/* Column 3: Top Destinations */}
             <div>
-              <h4 className="text-white font-bold text-base mb-4 font-display flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-brand-accent"></span> Popular Packages
+              <h4 className="text-slate-900 font-bold text-base mb-4 font-display flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-500"></span> Popular Packages
               </h4>
               <ul className="space-y-2.5 text-sm">
                 {popularDests.map((dest) => (
                   <li key={dest.id}>
                     <button
                       onClick={() => navigateTo('package-detail', { packageId: dest.id })}
-                      className="text-brand-slate-300 hover:text-brand-teal hover:translate-x-1 transition transform duration-200 inline-block"
+                      className="text-slate-600 hover:text-teal-600 font-medium hover:translate-x-1 transition transform duration-200 inline-block"
                     >
                       {dest.name}
                     </button>
@@ -145,50 +145,58 @@ export const Footer: React.FC = () => {
 
             {/* Column 4: Contact Information */}
             <div className="space-y-3.5">
-              <h4 className="text-white font-bold text-base mb-4 font-display flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-brand-cyan"></span> Reach Out to Us
+              <h4 className="text-slate-900 font-bold text-base mb-4 font-display flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-cyan-500"></span> Reach Out to Us
               </h4>
 
-              <div className="flex items-start gap-3 text-sm text-brand-slate-300">
-                <Phone className="w-4 h-4 text-brand-teal flex-shrink-0 mt-1" />
+              <div className="flex items-start gap-3 text-sm">
+                <div className="w-8 h-8 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Phone className="w-4 h-4" />
+                </div>
                 <div>
-                  <div className="text-xs text-brand-slate-400">Phone Support:</div>
-                  <a href={`tel:${COMPANY_INFO.phoneRaw}`} className="text-white hover:text-brand-teal transition font-medium">
+                  <div className="text-xs text-slate-500 font-semibold uppercase">Phone Support:</div>
+                  <a href={`tel:${COMPANY_INFO.phoneRaw}`} className="text-slate-900 hover:text-teal-600 transition font-bold">
                     {COMPANY_INFO.phone}
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 text-sm text-brand-slate-300">
-                <MessageCircle className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-1" />
+              <div className="flex items-start gap-3 text-sm">
+                <div className="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <MessageCircle className="w-4 h-4 fill-emerald-600 text-emerald-50" />
+                </div>
                 <div>
-                  <div className="text-xs text-brand-slate-400">WhatsApp Chat:</div>
+                  <div className="text-xs text-slate-500 font-semibold uppercase">WhatsApp Chat:</div>
                   <a
                     href={generateWhatsAppLink('Hi ShamshadCodes! I would like to book a trip.')}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-emerald-400 hover:underline font-medium"
+                    className="text-emerald-600 hover:underline font-bold"
                   >
                     {COMPANY_INFO.whatsapp}
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 text-sm text-brand-slate-300">
-                <Mail className="w-4 h-4 text-brand-cyan flex-shrink-0 mt-1" />
+              <div className="flex items-start gap-3 text-sm">
+                <div className="w-8 h-8 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Mail className="w-4 h-4" />
+                </div>
                 <div>
-                  <div className="text-xs text-brand-slate-400">Official Email:</div>
-                  <a href={`mailto:${COMPANY_INFO.email}`} className="text-white hover:text-brand-teal transition">
+                  <div className="text-xs text-slate-500 font-semibold uppercase">Official Email:</div>
+                  <a href={`mailto:${COMPANY_INFO.email}`} className="text-slate-900 hover:text-teal-600 transition font-semibold">
                     {COMPANY_INFO.email}
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 text-sm text-brand-slate-300">
-                <MapPin className="w-4 h-4 text-brand-accent flex-shrink-0 mt-1" />
+              <div className="flex items-start gap-3 text-sm">
+                <div className="w-8 h-8 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <MapPin className="w-4 h-4" />
+                </div>
                 <div>
-                  <div className="text-xs text-brand-slate-400">Office Location:</div>
-                  <p className="text-xs text-brand-slate-300 leading-relaxed">
+                  <div className="text-xs text-slate-500 font-semibold uppercase">Office Location:</div>
+                  <p className="text-xs text-slate-700 font-medium leading-relaxed">
                     {COMPANY_INFO.officeAddress.line1}, {COMPANY_INFO.officeAddress.city}, {COMPANY_INFO.officeAddress.country}
                   </p>
                 </div>
@@ -197,33 +205,33 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Bottom Row */}
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-brand-slate-400">
-            <div className="flex items-center gap-1 text-center sm:text-left">
+          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+            <div className="flex items-center gap-1 text-center sm:text-left font-medium">
               <span>© {new Date().getFullYear()} ShamshadCodes Tours & Travel. All rights reserved.</span>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 font-semibold">
               <button
                 onClick={() => setActivePolicy('privacy')}
-                className="hover:text-white transition"
+                className="hover:text-teal-600 transition"
               >
                 Privacy Policy
               </button>
               <button
                 onClick={() => setActivePolicy('terms')}
-                className="hover:text-white transition"
+                className="hover:text-teal-600 transition"
               >
                 Terms & Conditions
               </button>
               <button
                 onClick={() => setActivePolicy('cancellation')}
-                className="hover:text-white transition"
+                className="hover:text-teal-600 transition"
               >
                 Cancellation Policy
               </button>
               <button
                 onClick={scrollToTop}
-                className="w-8 h-8 rounded-full bg-white/5 hover:bg-brand-teal hover:text-white flex items-center justify-center transition"
+                className="w-9 h-9 rounded-2xl bg-slate-100 hover:bg-teal-600 hover:text-white flex items-center justify-center transition shadow-sm text-slate-700"
                 aria-label="Back to top"
               >
                 <ArrowUp className="w-4 h-4" />
@@ -235,23 +243,23 @@ export const Footer: React.FC = () => {
 
       {/* Policy View Modal */}
       {activePolicy && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-brand-navy-dark/80 backdrop-blur-md animate-in fade-in">
-          <div className="bg-white text-brand-navy max-w-2xl w-full rounded-3xl p-6 sm:p-8 shadow-2xl relative max-h-[80vh] overflow-y-auto">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/75 backdrop-blur-md animate-in fade-in">
+          <div className="bg-white text-slate-900 max-w-2xl w-full rounded-3xl p-6 sm:p-8 shadow-2xl relative max-h-[80vh] overflow-y-auto border border-slate-200">
             <button
               onClick={() => setActivePolicy(null)}
-              className="absolute top-5 right-5 w-8 h-8 rounded-full bg-brand-slate-100 hover:bg-brand-slate-200 flex items-center justify-center transition"
+              className="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition"
             >
-              <X className="w-4 h-4 text-brand-slate-600" />
+              <X className="w-4 h-4 text-slate-600" />
             </button>
 
             {activePolicy === 'privacy' && (
               <div className="space-y-4">
-                <h3 className="text-xl font-bold font-display text-brand-navy">Privacy Policy</h3>
-                <p className="text-sm text-brand-slate-600 leading-relaxed">
+                <h3 className="text-xl font-bold font-display text-slate-900">Privacy Policy</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
                   At ShamshadCodes Tours & Travel, your privacy is paramount. We only collect essential travel information (such as your name, contact phone, travel dates, and destination preferences) required to prepare customized travel quotations and fulfill hotel and transport reservations.
                 </p>
-                <h4 className="font-semibold text-sm text-brand-navy">Data Security</h4>
-                <p className="text-sm text-brand-slate-600 leading-relaxed">
+                <h4 className="font-semibold text-sm text-slate-900">Data Security</h4>
+                <p className="text-sm text-slate-600 leading-relaxed">
                   We do not sell, rent, or trade your personal information with third-party advertising brokers. Your information is strictly used for your trip planning and direct communication via phone, email, and WhatsApp.
                 </p>
               </div>
@@ -259,11 +267,11 @@ export const Footer: React.FC = () => {
 
             {activePolicy === 'terms' && (
               <div className="space-y-4">
-                <h3 className="text-xl font-bold font-display text-brand-navy">Terms & Conditions</h3>
-                <p className="text-sm text-brand-slate-600 leading-relaxed">
+                <h3 className="text-xl font-bold font-display text-slate-900">Terms & Conditions</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
                   All tour itineraries and pricing quotes provided by ShamshadCodes Tours & Travel are subject to hotel room and flight availability at the time of token advance confirmation.
                 </p>
-                <ul className="list-disc pl-5 text-sm text-brand-slate-600 space-y-2">
+                <ul className="list-disc pl-5 text-sm text-slate-600 space-y-2">
                   <li>Valid government-approved identification (Aadhaar/Passport) is mandatory for check-ins.</li>
                   <li>Flight timings, road conditions, and weather factors may necessitate minor adjustments to sightseeing schedules for passenger safety.</li>
                   <li>Child rates apply as per standard hotel policy (under 5 years complimentary; 5–11 years with/without extra bed).</li>
@@ -273,19 +281,19 @@ export const Footer: React.FC = () => {
 
             {activePolicy === 'cancellation' && (
               <div className="space-y-4">
-                <h3 className="text-xl font-bold font-display text-brand-navy">Cancellation & Refund Policy</h3>
-                <p className="text-sm text-brand-slate-600 leading-relaxed">
+                <h3 className="text-xl font-bold font-display text-slate-900">Cancellation & Refund Policy</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
                   We maintain traveler-friendly and transparent cancellation policies:
                 </p>
-                <div className="space-y-2 text-sm text-brand-slate-600">
-                  <div className="p-3 bg-brand-slate-50 rounded-xl border border-brand-slate-200">
-                    <span className="font-bold text-brand-navy">30+ Days Before Travel:</span> 90% refund of advance deposit (less airline cancellation fees if applicable).
+                <div className="space-y-2 text-sm text-slate-600">
+                  <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                    <span className="font-bold text-slate-900">30+ Days Before Travel:</span> 90% refund of advance deposit (less airline cancellation fees if applicable).
                   </div>
-                  <div className="p-3 bg-brand-slate-50 rounded-xl border border-brand-slate-200">
-                    <span className="font-bold text-brand-navy">15 to 29 Days Before Travel:</span> 60% refund or free date-change voucher option.
+                  <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                    <span className="font-bold text-slate-900">15 to 29 Days Before Travel:</span> 60% refund or free date-change voucher option.
                   </div>
-                  <div className="p-3 bg-brand-slate-50 rounded-xl border border-brand-slate-200">
-                    <span className="font-bold text-brand-navy">Less Than 14 Days Before Travel:</span> Subject to individual hotel and transport partner policies.
+                  <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                    <span className="font-bold text-slate-900">Less Than 14 Days Before Travel:</span> Subject to individual hotel and transport partner policies.
                   </div>
                 </div>
               </div>
