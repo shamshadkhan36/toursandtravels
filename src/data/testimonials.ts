@@ -1,0 +1,48 @@
+import type { Testimonial } from '../types';
+
+export const TESTIMONIALS_DATA: Testimonial[] = [
+  {
+    id: 'test-1',
+    name: 'Rohit & Priya Sharma',
+    location: 'Mumbai, Maharashtra',
+    tripTaken: 'Kashmir Honeymoon Special (6 Days)',
+    rating: 5,
+    review: 'Our Kashmir honeymoon planned by ShamshadCodes was magical! The Dal Lake houseboat stay was extraordinary, and our private driver was so courteous and punctual. Everything from the Gondola rides in Gulmarg to hotel dinners was seamlessly managed. 10/10 recommend!',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+    date: 'February 2026',
+    verified: true,
+  },
+  {
+    id: 'test-2',
+    name: 'Ananya Deshmukh & Family',
+    location: 'Pune, Maharashtra',
+    tripTaken: 'Dubai Family Explorer (5 Days)',
+    rating: 5,
+    review: 'We traveled to Dubai with our two kids and elderly parents. ShamshadCodes planned every single detail with immense care — kid-friendly timings, prime Burj Khalifa tickets, and an incredible Desert Safari. The WhatsApp support team was available instantly even late at night.',
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
+    date: 'January 2026',
+    verified: true,
+  },
+  {
+    id: 'test-3',
+    name: 'Dr. Rajesh & Sunita Menon',
+    location: 'Bengaluru, Karnataka',
+    tripTaken: 'Kerala Backwaters & Munnar (6 Days)',
+    rating: 5,
+    review: 'The private houseboat in Alleppey and the tea-estate resort in Munnar were far beyond our expectations. What stood out was the complete pricing transparency — not a single hidden charge or unexpected expense throughout our 6 days. Truly professional travel experts!',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+    date: 'December 2025',
+    verified: true,
+  },
+  {
+    id: 'test-4',
+    name: 'Vikram Mehta & Friends Group',
+    location: 'New Delhi',
+    tripTaken: 'Bali Tropical Adventure (6 Days)',
+    rating: 5,
+    review: 'We were a group of 6 friends visiting Bali for the first time. The Nusa Penida speedboat tour, private villa in Ubud, and Uluwatu Kecak show were effortlessly arranged. The itinerary had the perfect balance of adventure and relaxing downtime. Will definitely book again!',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
+    date: 'November 2025',
+    verified: true,
+  },
+];
